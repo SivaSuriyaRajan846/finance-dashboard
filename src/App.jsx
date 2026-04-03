@@ -43,7 +43,7 @@ function AppShell() {
       <div className="app-inner">
         <header className="app-header">
           <div className="app-title-block">
-            {/* <p className="kicker">Zorovyn · front-end exercise</p> */}
+          
             <h1>Finance Dashboard</h1>
             <p>
               A pretend ledger so you can poke at charts and filters without wiring a server. I
