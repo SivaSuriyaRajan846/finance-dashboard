@@ -4,9 +4,9 @@ export function SpendingBreakdown({ rows, total }) {
   if (!rows.length || total <= 0) {
     return (
       <div className="panel">
-        <h3>Spending by category</h3>
+        <h3>Where spending piles up</h3>
         <p className="empty-state" style={{ padding: '1rem' }}>
-          No expense entries to chart.
+          No expenses yet — nothing to draw.
         </p>
       </div>
     )
@@ -14,7 +14,7 @@ export function SpendingBreakdown({ rows, total }) {
 
   return (
     <div className="panel">
-      <h3>Spending by category</h3>
+      <h3>Where spending piles up</h3>
       <div className="category-bars">
         {rows.map((r) => {
           const pct = total > 0 ? Math.round((r.amount / total) * 100) : 0

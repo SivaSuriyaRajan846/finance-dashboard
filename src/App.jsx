@@ -43,8 +43,13 @@ function AppShell() {
       <div className="app-inner">
         <header className="app-header">
           <div className="app-title-block">
-            <h1>Finance dashboard</h1>
-            <p>Track balance, spending, and recent activity — mock data, no backend.</p>
+            {/* <p className="kicker">Zorovyn · front-end exercise</p> */}
+            <h1>Finance Dashboard</h1>
+            <p>
+              A pretend ledger so you can poke at charts and filters without wiring a server. I
+              reached for React plus handwritten CSS — no UI kit, no chart library — because I
+              wanted the bundle and the look to stay mine.
+            </p>
           </div>
           <div className="header-actions">
             <div className="select-wrap">
@@ -103,14 +108,15 @@ function AppShell() {
               color: 'var(--muted)',
             }}
           >
-            You are in <strong style={{ color: 'var(--text)' }}>viewer</strong> mode — browse
-            numbers and export CSV. Switch role to admin to add or change rows.
+            You are in <strong style={{ color: 'var(--text)' }}>viewer</strong> mode: look around,
+            export CSV if you like. Flip the role to admin above when you want to add or edit rows
+            (it is all fake data living in your browser).
           </p>
         )}
 
         <section className="section" aria-labelledby="overview-heading">
           <h2 id="overview-heading" className="section-title">
-            Overview
+            At a glance
           </h2>
           <SummaryCards
             income={summary.income}
@@ -130,12 +136,13 @@ function AppShell() {
 
         <InsightsSection insights={insights} summary={summary} />
 
-        <footer style={{ marginTop: '2rem', fontSize: '0.85rem', color: 'var(--muted)' }}>
+        {/* <footer style={{ marginTop: '2rem', fontSize: '0.85rem', color: 'var(--muted)' }}>
           <p style={{ margin: 0 }}>
-            Assignment demo — state lives in React context and persists to{' '}
-            <code style={{ fontSize: '0.8rem' }}>localStorage</code> in this browser.
+            State sits in React context and survives refresh via{' '}
+            <code style={{ fontSize: '0.8rem' }}>localStorage</code> — same machine, same browser,
+            nothing leaves your laptop.
           </p>
-        </footer>
+        </footer> */}
       </div>
     </div>
   )

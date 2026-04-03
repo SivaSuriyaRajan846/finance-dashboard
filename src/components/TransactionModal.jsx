@@ -129,7 +129,7 @@ export function TransactionModal({ open, mode, initial, onClose, onSave }) {
               id="tx-note"
               value={form.note}
               onChange={(e) => setForm((f) => ({ ...f, note: e.target.value }))}
-              placeholder="Short description"
+              placeholder="e.g. Groceries, rent split, side gig"
             />
           </div>
           <div className="modal-actions">

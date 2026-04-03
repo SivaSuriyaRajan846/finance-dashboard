@@ -82,7 +82,7 @@ export function TransactionsSection({ filteredRows }) {
   return (
     <section className="section" aria-labelledby="tx-heading">
       <h2 id="tx-heading" className="section-title">
-        Transactions
+        Line items
       </h2>
 
       <div className="toolbar">
@@ -150,8 +150,8 @@ export function TransactionsSection({ filteredRows }) {
       {filteredRows.length === 0 ? (
         <div className="panel">
           <div className="empty-state">
-            <strong>No transactions match.</strong>
-            <p>Try clearing search or filters — or add a row if you are an admin.</p>
+            <strong>Nothing matches that filter.</strong>
+            <p>Widen the search, pick &quot;All&quot; for category/type, or switch to admin and add a row.</p>
           </div>
         </div>
       ) : (

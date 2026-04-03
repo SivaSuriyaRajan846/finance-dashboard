@@ -1,35 +1,35 @@
-/* Light theme defaults */
+/* Light theme — warm paper + ink, forest accent (hand-rolled, not a template kit) */
 :root,
 [data-theme='light'] {
-  --bg: #f4f1eb;
-  --surface: #fffcf7;
-  --surface2: #fff8ef;
-  --text: #1a1a1a;
-  --muted: #5c5348;
-  --border: #d9cfc0;
-  --accent: #2d4a6f;
-  --accent-hover: #1e3555;
-  --income: #1f6b4a;
-  --expense: #a63d3d;
-  --chart1: #2d4a6f;
-  --chart2: #6b8cae;
-  --shadow: rgba(45, 74, 111, 0.08);
+  --bg: #efe9df;
+  --surface: #faf6ef;
+  --surface2: #f3ebe0;
+  --text: #1c1915;
+  --muted: #5a5349;
+  --border: #cfc4b4;
+  --accent: #2d4a3a;
+  --accent-hover: #1f3428;
+  --income: #25603c;
+  --expense: #9c4238;
+  --chart1: #2d4a3a;
+  --chart2: #6b8f78;
+  --shadow: rgba(28, 25, 21, 0.07);
 }
 
 [data-theme='dark'] {
-  --bg: #12161c;
-  --surface: #1a2029;
-  --surface2: #222a35;
-  --text: #e8e4dc;
-  --muted: #9a9288;
-  --border: #343d4a;
-  --accent: #8cb4d9;
-  --accent-hover: #a8c9e8;
-  --income: #6fcf97;
-  --expense: #e88a8a;
-  --chart1: #8cb4d9;
-  --chart2: #5a7aa0;
-  --shadow: rgba(0, 0, 0, 0.35);
+  --bg: #141210;
+  --surface: #1e1c19;
+  --surface2: #282522;
+  --text: #ebe6dd;
+  --muted: #9c958a;
+  --border: #3d3830;
+  --accent: #9ebda8;
+  --accent-hover: #b8d4c2;
+  --income: #7fd4a0;
+  --expense: #e5988e;
+  --chart1: #9ebda8;
+  --chart2: #6d8a7a;
+  --shadow: rgba(0, 0, 0, 0.4);
 }
 
 .app {
@@ -61,23 +61,34 @@
   border-bottom: 1px solid var(--border);
 }
 
-.app-title-block h1 {
+.app-title-block .kicker {
   margin: 0 0 0.35rem;
-  font-size: 1.65rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.app-title-block h1 {
+  margin: 0 0 0.45rem;
+  font-size: 1.7rem;
   font-weight: 400;
   letter-spacing: -0.02em;
+  line-height: 1.2;
 }
 
 .app-title-block p {
   margin: 0;
   color: var(--muted);
   font-size: 0.95rem;
+  max-width: 34rem;
 }
 
 .header-actions {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: flex-end;
   gap: 0.65rem;
 }
 

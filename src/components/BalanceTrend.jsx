@@ -4,7 +4,7 @@ export function BalanceTrend({ points }) {
   if (!points.length) {
     return (
       <div className="panel">
-        <h3>Balance trend (cumulative)</h3>
+        <h3>Running balance by month</h3>
         <p className="empty-state" style={{ padding: '1rem' }}>
           Not enough data for a trend yet.
         </p>
@@ -43,7 +43,7 @@ export function BalanceTrend({ points }) {
 
   return (
     <div className="panel">
-      <h3>Balance trend (cumulative by month)</h3>
+      <h3>Running balance by month</h3>
       <div className="trend-svg-wrap">
         <svg
           className="trend-svg"
@@ -107,7 +107,7 @@ export function BalanceTrend({ points }) {
         </svg>
       </div>
       <p style={{ margin: '0.5rem 0 0', fontSize: '0.85rem', color: 'var(--muted)' }}>
-        Ending cumulative balance: <strong style={{ color: 'var(--text)' }}>{formatMoney(last.balance)}</strong>
+        Where the line lands: <strong style={{ color: 'var(--text)' }}>{formatMoney(last.balance)}</strong>
       </p>
     </div>
   )

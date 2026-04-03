@@ -15,18 +15,18 @@ export function InsightsSection({ insights, summary }) {
   return (
     <section className="section" aria-labelledby="insights-heading">
       <h2 id="insights-heading" className="section-title">
-        Insights
+        Quick reads
       </h2>
       <div className="panel">
         <ul className="insights-list">
           <li>
             {topCategory ? (
               <>
-                Highest spending category is <strong>{topCategory.category}</strong> at{' '}
-                <strong>{formatMoney(topCategory.amount)}</strong> across all expenses.
+                The biggest sink so far is <strong>{topCategory.category}</strong> (
+                <strong>{formatMoney(topCategory.amount)}</strong> across expenses).
               </>
             ) : (
-              <>No expense categories yet — add some expenses to see a leader.</>
+              <>Once you log a few expenses, the heaviest category will show up here.</>
             )}
           </li>
           <li>
@@ -47,13 +47,13 @@ export function InsightsSection({ insights, summary }) {
                 <strong>{formatMoney(comparison.prevNet)}</strong>.
               </>
             ) : (
-              <>Need at least two months of data for a clean month-to-month comparison.</>
+              <>Need two different months in the data before a fair side-by-side.</>
             )}
           </li>
           <li>
-            Average expense line item is <strong>{formatMoney(avgExpense)}</strong> across{' '}
-            <strong>{transactionCount}</strong> recorded line{transactionCount === 1 ? '' : 's'}.
-            Overall net position: <strong>{formatMoney(summary.balance)}</strong>.
+            Rough average per expense row: <strong>{formatMoney(avgExpense)}</strong> (
+            <strong>{transactionCount}</strong> line{transactionCount === 1 ? '' : 's'} total). Net
+            after everything: <strong>{formatMoney(summary.balance)}</strong>.
           </li>
         </ul>
       </div>

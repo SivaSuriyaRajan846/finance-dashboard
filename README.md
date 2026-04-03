@@ -1,45 +1,44 @@
-# Finance Dashboard (Zorovyn assignment)
+# Finance Dashboard (Zorvyn frontend take-home)
 
-A small React dashboard for viewing income, expenses, and spending patterns. Everything runs in the browser with mock data — no API.
+Small React page for poking at income, expenses, and category splits. Everything is mock data in the browser — no API.
 
-## How to run
+I kept the stack boring on purpose: **Vite + React**, **plain CSS** (one main stylesheet), **SVG + div bars** for charts instead of pulling in a chart package. Easier to read in a review, and the bundle stays small.
 
-You need Node.js 18+ (or any version that works with Vite 6).
+## Run it
+
+Node.js 18+ is fine (anything that runs Vite 6 works).
 
 ```bash
 npm install
 npm run dev
 ```
 
-Open the URL Vite prints (usually `http://localhost:5173`).
+Then open the URL Vite prints (usually `http://localhost:5173`).
 
-Build for production:
+Production build:
 
 ```bash
 npm run build
 npm run preview
 ```
 
-## What I built
+## What is in here
 
-- **Overview**: Total balance (net), total income, total expenses.
-- **Charts**: Cumulative balance by month (SVG line) and horizontal bars for spending by category (CSS).
-- **Transactions**: Table with date, category, type, amount, note. Search, category filter, type filter, and column sorting.
-- **Roles**: Dropdown switches between **viewer** (read-only) and **admin** (add / edit / delete). No server — it is only UI behavior.
-- **Insights**: Highest spending category, month-to-month net comparison when there are two months of data, average expense size, and overall net position.
-- **State**: `useReducer` + React Context for transactions, filters, sort, role, and theme.
-- **Persistence**: Transactions, role, and theme are saved to `localStorage` so a refresh keeps your demo edits.
-- **Extras**: Light/dark theme, CSV export of the **currently visible** (filtered) rows, “Reset sample data” to restore the seed list.
+- **At a glance**: Net position, money in, money out.
+- **Charts**: Running balance by month (hand-drawn SVG line) and spending bars by category (CSS).
+- **Line items**: Table with search, filters, sorting. **Viewer** is read-only; **Admin** can add/edit/delete — all simulated on the client.
+- **Quick reads**: A few sentences derived from the data (top category, month vs month when possible, rough averages).
+- **State**: `useReducer` + Context. **localStorage** keeps transactions, role, and theme across refresh.
 
-## Project layout
+Currency is **INR** with `en-IN` formatting — change `src/utils/format.js` if you want something else.
 
-- `src/context/FinanceContext.jsx` — global state and persistence side effects
-- `src/utils/derive.js` — pure helpers for summaries, filters, charts, insights
-- `src/components/` — UI pieces (cards, charts, table, modal)
-- `src/data/mockData.js` — starting transactions and category list
-- `src/App.css` — plain CSS (variables for theming, no Tailwind)
+## Files worth opening first
 
-## Notes
+- `src/App.jsx` — layout and copy
+- `src/context/FinanceContext.jsx` — state + persistence
+- `src/utils/derive.js` — numbers for summaries and insights
+- `src/App.css` — layout and light/dark variables
 
-- Currency is formatted in **INR** (`en-IN`) to match a typical India-based demo; you can change `format.js` if you prefer USD.
-- This is intentionally simple: readable files, no chart library, SVG + CSS for visuals.
+---
+
+*Rough edges are intentional trade-offs for a small demo — happy to walk through choices in discussion.*
